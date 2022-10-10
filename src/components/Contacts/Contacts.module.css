@@ -1,0 +1,21 @@
+.contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+}
+h1{
+    margin-right: auto;
+    margin-left: auto;
+}
+.noSearch{
+
+    font-size: small;
+    color: red;
+}
+
+.deleteButton{
+    margin-left: 10px;
+    margin-bottom: 5px ;
+    background-color: rgb(245, 181, 181);
+}

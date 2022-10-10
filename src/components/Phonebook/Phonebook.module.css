@@ -1,0 +1,12 @@
+
+
+.form {
+  border: solid 2px rgb(85, 84, 84);
+  padding: 10px 20px;
+  font-size: medium;
+}
+h1{
+    width:fit-content;
+    margin-right: auto;
+    margin-left: auto;
+}
