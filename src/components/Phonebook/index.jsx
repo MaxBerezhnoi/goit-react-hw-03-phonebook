@@ -49,15 +49,16 @@ class Phonebook extends Component {
   deleteContact = e => {
     let deleted = e.currentTarget.id.toString();
     console.log(e.currentTarget);
-    console.log(deleted);
 
     
-    let indexDelete = userContacts.findIndex(item => item.id === deleted);
-    console.log(indexDelete);
-    userContacts.splice(indexDelete, 1);
+    //let indexDelete = userContacts.findIndex();
+    //userContacts.splice(indexDelete, 1);
+    
+    userContacts = userContacts.filter(item => item.id !== deleted);
     this.setState({
       contacts: userContacts,
     });
+    console.log(userContacts);
   };
 
   //Функция удаления
@@ -94,10 +95,23 @@ class Phonebook extends Component {
     console.log(userContacts);
     this.setState({contacts: userContacts,
     });
+    
    
   };
 
   //Функция добавления контакта
+  componentDidMount() {
+    console.log("component did mount!");
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(prevState.contacts);
+    console.log(userContacts);
+    if (userContacts !== prevState.contacts) {
+      console.log("contacts update");
+      localStorage.setItem('contacts', JSON.stringify(userContacts));
+    }
+  }
 
   render() {
     return (
