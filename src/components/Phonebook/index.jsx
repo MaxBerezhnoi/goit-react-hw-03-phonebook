@@ -53,7 +53,7 @@ class Phonebook extends Component {
     
     //let indexDelete = userContacts.findIndex();
     //userContacts.splice(indexDelete, 1);
-    
+
     userContacts = userContacts.filter(item => item.id !== deleted);
     this.setState({
       contacts: userContacts,
@@ -80,8 +80,8 @@ class Phonebook extends Component {
       id: contactId,
     };
 
-    let data = [];
-    data.push(userData);
+    /*let data = [];
+    data.push(userData);*/
 
     let updateData = userContacts.find(
       item => item.name.toUpperCase() === userData.name.toUpperCase()
@@ -91,7 +91,7 @@ class Phonebook extends Component {
     if (updateData !== undefined) {
       return alert(userData.name.toUpperCase() + ' is already in contacts');
     }
-    userContacts=userContacts.concat(data);
+    userContacts.push(userData);
     console.log(userContacts);
     this.setState({contacts: userContacts,
     });
