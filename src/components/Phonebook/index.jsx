@@ -80,8 +80,8 @@ class Phonebook extends Component {
       id: contactId,
     };
 
-    /*let data = [];
-    data.push(userData);*/
+    let data = [];
+    data.push(userData);
 
     let updateData = userContacts.find(
       item => item.name.toUpperCase() === userData.name.toUpperCase()
@@ -91,17 +91,20 @@ class Phonebook extends Component {
     if (updateData !== undefined) {
       return alert(userData.name.toUpperCase() + ' is already in contacts');
     }
-    userContacts.push(userData);
+    //userContacts = userContacts.push(userData);
+    userContacts = userContacts.concat(data);
     console.log(userContacts);
-    this.setState({contacts: userContacts,
-    });
+    this.setState({contacts: userContacts,});
     
    
   };
 
   //Функция добавления контакта
   componentDidMount() {
+    /*const contacts = localStorage.getItem('contacts');
+    userContacts = JSON.parse(contacts);
     console.log("component did mount!");
+    this.setState({ contacts: userContacts });*/
   }
 
   componentDidUpdate(prevProps, prevState) {
