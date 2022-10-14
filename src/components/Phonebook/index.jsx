@@ -101,10 +101,10 @@ class Phonebook extends Component {
 
   //Функция добавления контакта
   componentDidMount() {
-    /*const contacts = localStorage.getItem('contacts');
+    const contacts = localStorage.getItem('contacts');
     userContacts = JSON.parse(contacts);
     console.log("component did mount!");
-    this.setState({ contacts: userContacts });*/
+    this.setState({ contacts: userContacts });
   }
 
   componentDidUpdate(prevProps, prevState) {
